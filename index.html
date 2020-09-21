@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>버튼</title>
+    <style media="screen">
+      * {
+        margin:0;
+         padding:0;
+       }
+      body {
+        font-family:sans-serif;
+        padding-top:100px;
+      }
+
+      h3 {
+        width:110px;
+        margin-left:100px;
+        display:inline-block;
+      }
+
+      label {
+        display:inline-block;
+        vertical-align: middle;
+        cursor:pointer;
+
+      }
+
+
+      input[type="checkbox"] {
+        display:none;
+      }
+
+      #hamburgerBtn {
+        padding-bottom: 40px;
+        border-bottom: 1px solid #ccc
+      }
+
+      .hamB_la {
+        position:relative;
+        width: 25px;
+        height: 25px;
+        display:inline-block;
+      }
+
+      .hamB_la span {
+        position:absolute;
+        width: 25px;
+        height: 3px;
+        background-color:#000;
+        top: 5px;
+transform-origin: 3px 1px;
+transition: 0.5s all ease;
+      }
+
+        .hamB_la span:nth-child(2) {
+          top: 50%;
+          transform: translateY(-50%);
+
+        }
+
+       .hamB_la span:nth-child(3) {
+         top: auto;
+         bottom: 5px;
+       }
+
+
+
+#hamB:checked + label span:nth-child(1) {transform:rotate(45deg);}
+#hamB:checked + label span:nth-child(2) {opacity:0;}
+#hamB:checked + label span:nth-child(3) {transform:rotate(-45deg);}
+
+#upDownBtn {
+  border-bottom:1px solid #ccc;
+padding: 20px 0;
+
+}
+
+#upDownBtn h3 {
+  line-height:100px;
+}
+
+label.upDown_la {
+  background-color: #6bb4e6;
+color:#fff;
+padding: 10px 20px;
+border-radius:10px;
+border-bottom: 5px solid #1c76b9;
+transition:0.5s;
+}
+
+input#up-down:checked + label {
+  transform: translateY(5px);
+  border-bottom-width:1px;
+}
+
+
+#onOffBtn {
+  padding: 40px 0;
+  border-bottom: 1px solid #ccc
+
+}
+
+#onOffBtn h3 {}
+ label.onOff_la {
+    position: relative;
+  width: 100px;
+  height:40px;
+  background-color: #8d8d8d;
+  border-radius :20px;
+}
+
+
+
+.onOff_la span{
+  color:#fff;
+ position: absolute;
+ top:50%;
+ transform:translateY(-50%);
+ transition:0.5s;
+}
+
+.onOff_la span:nth-child(1){
+left:-50%;
+}
+
+.onOff_la span:nth-child(2){
+ right: 20%;
+}
+
+.onOff_la .btn{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background-color: #54dd3c;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  margin: 0 2px;
+}
+
+#on-off:checked + label {
+  background-color: #6bb4e9;
+}
+
+#on-off:checked + label span:nth-child(1) {
+left:20%;
+}
+
+#on-off:checked + label span:nth-child(2) {
+right: -50%;
+}
+
+#on-off:checked + label .btn{
+  margin-left:62px;
+
+}
+
+#slideBtn {
+  padding: 40px 0;
+  border-bottom: 1px solid #ccc
+
+}
+
+.slide_la {
+  width: 40px;
+  height: 40px;
+  background-color: #3B5998;
+  line-height: 40px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.slide_la i {
+  width: 40px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+}
+
+.slide_la span {
+position: absolute;
+left: 40px;
+color: white;
+line-height: 40px;
+}
+
+#slide:checked + label {
+  width: 170px;
+}
+
+
+#rotateBtn {
+padding: 40px 0;
+border-bottom: 1px solid #ccc;
+}
+
+ label.rotate_la {
+  position: relative;
+  width: 100px;
+  height: 50px;
+
+}
+
+.rotate_la span {
+  position: absolute;
+  width: 100%;
+  line-height: 50px;
+  color: #fff;
+  text-align: center;
+  transition: 0.5s;
+  backface-visibility: hidden;
+}
+
+.rotate_la span:nth-child(1) {
+  background-color: #6bb4e9;
+
+}
+
+.rotate_la span:nth-child(2) {
+  background-color: #e96b7e;
+  transform: rotateX(180deg);
+
+
+}
+
+#rotate:checked + label span:nth-child(1) {
+  transform:rotateX(180deg);
+}
+
+#rotate:checked + label span:nth-child(2) {
+  transform: rotateX(0deg);
+
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div id="hamburgerBtn">
+      <h3>menu/close</h3>
+      <input type="checkbox" id="hamB">
+      <label for="hamB" class="hamB_la">
+      <span></span>
+      <span></span>
+      <span></span>
+      </label>
+
+    </div>
+<br>
+    <div id="upDownBtn">
+      <h3>Up/down</h3>
+      <input type="checkbox" id="up-down">
+      <label for="up-down" class="upDown_la">BUTTON</label>
+
+    </div>
+
+    <div id="onOffBtn">
+      <h3>on/off</h3>
+      <input type="checkbox" id="on-off">
+      <label for="on-off" class="onOff_la">
+        <span>ON</span>
+        <span>OFF</span>
+        <span class="btn"></span>
+    </div>
+
+    <div id="slideBtn">
+      <h3>slide</h3>
+      <input type="checkbox" id="slide">
+      <label for="slide" class="slide_la">
+      <i class="fab fa-facebook-f"></i>
+      <span>페이스북 바로가기</span>
+    </label>
+    </div>
+
+    <div id="rotateBtn">
+      <h3>rotate</h3>
+      <input type="checkbox" id="rotate">
+      <label for="rotate" class="rotate_la">
+       <span>CLICK! <i class="fas fa-chevron-down"></i></span>
+       <span>AGAIN! <i class="fas fa-redo"></i></span>
+      </label>
+    </div>
+
+  </body>
+</html>
